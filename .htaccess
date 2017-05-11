@@ -1,0 +1,10 @@
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.unilab.kg
+RewriteRule (.*) http://unilab.kg/$1 [R=301,L]
+
+ErrorDocument 404 http://www.unilab.kg/404.html
